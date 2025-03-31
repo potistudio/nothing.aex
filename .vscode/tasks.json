@@ -1,0 +1,27 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "cppbuild",
+			"label": "C++: MSBuild.exe Release build solution",
+			"command": "MSBuild",
+			"args": [
+				"${workspaceFolder}/win/nothing.sln",
+				"/t:clean;rebuild",
+				"/p:Configuration=Release",
+			],
+			"group": "build",
+		},
+		{
+			"type": "cppbuild",
+			"label": "C++: MSBuild.exe Debug Solution",
+			"command": "MSBuild",
+			"args": [
+				"${workspaceFolder}/win/nothing.sln",
+				"/t:build",
+				"/p:Configuration=Debug",
+			],
+			"group": "build",
+		}
+	]
+}

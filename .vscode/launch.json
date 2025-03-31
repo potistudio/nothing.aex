@@ -1,0 +1,13 @@
+{
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"name": "Launch AE Debugging",
+			"type": "cppvsdbg",
+			"request": "launch",
+			"preLaunchTask": "C++: MSBuild.exe Debug Solution",
+			"program": "C:/Program Files/Adobe/Adobe After Effects (Beta)/Support Files/AfterFX.com",
+			"cwd": "${workspaceFolder}",
+		},
+	]
+}
