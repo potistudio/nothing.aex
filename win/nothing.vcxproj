@@ -30,6 +30,9 @@ cl /D "MSWindows" /EP $(IntDir)%(Filename).rrc &gt; "$(ProjectDir)..\pipl\"\\"%(
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\include\aesdk\utils\AEGP_SuiteHandler.cpp" />
+    <ClCompile Include="..\include\aesdk\utils\MissingSuiteError.cpp" />
+    <ClCompile Include="..\include\aesdk\utils\Smart_Utils.cpp" />
     <ClCompile Include="..\src\nothing.cc" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

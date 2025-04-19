@@ -10,6 +10,9 @@
     <Filter Include="Headers">
       <UniqueIdentifier>{18450f23-c8f7-443a-be43-16b5b4333a3b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Supports">
+      <UniqueIdentifier>{75b135a7-dc04-4516-86dc-95fafe63b191}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\pipl\resources.h">
@@ -27,6 +30,15 @@
   <ItemGroup>
     <ClCompile Include="..\src\nothing.cc">
       <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\include\aesdk\utils\Smart_Utils.cpp">
+      <Filter>Supports</Filter>
+    </ClCompile>
+    <ClCompile Include="..\include\aesdk\utils\MissingSuiteError.cpp">
+      <Filter>Supports</Filter>
+    </ClCompile>
+    <ClCompile Include="..\include\aesdk\utils\AEGP_SuiteHandler.cpp">
+      <Filter>Supports</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
