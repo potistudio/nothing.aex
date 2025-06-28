@@ -4,7 +4,6 @@
 
 
 //* Include AE *//
-
 #include "AEConfig.h"
 
 #ifdef AE_OS_WIN
@@ -21,7 +20,6 @@
 
 
 //* Versioning *//
-
 #define MAJOR_VERSION 1
 #define MINOR_VERSION 0
 #define BUG_VERSION   0
@@ -30,7 +28,6 @@
 
 
 //* Extern *//
-
 extern "C" {
 	DllExport PF_Err EffectMain (
 		PF_Cmd         cmd,
