@@ -2,7 +2,6 @@
 
 
 //* About *//
-
 static PF_Err About (PF_InData *in_data, PF_OutData *out_data, PF_ParamDef *params[], PF_LayerDef *output) {
 	PF_Err error = PF_Err_NONE;
 
@@ -21,7 +20,6 @@ static PF_Err About (PF_InData *in_data, PF_OutData *out_data, PF_ParamDef *para
 
 
 //* Global Setup *//
-
 static PF_Err GlobalSetup (PF_InData *in_data, PF_OutData *out_data, PF_ParamDef *params[], PF_LayerDef *output) {
 	PF_Err error = PF_Err_NONE;
 
@@ -41,7 +39,6 @@ static PF_Err GlobalSetup (PF_InData *in_data, PF_OutData *out_data, PF_ParamDef
 
 
 //* Params Setup *//
-
 static PF_Err ParamsSetup (PF_InData *in_data, PF_OutData *out_data, PF_ParamDef *params[], PF_LayerDef *output) {
 	PF_Err error = PF_Err_NONE;
 
@@ -52,7 +49,6 @@ static PF_Err ParamsSetup (PF_InData *in_data, PF_OutData *out_data, PF_ParamDef
 
 
 //* Render *//
-
 static PF_Err Render (PF_InData *in_data, PF_OutData *out_data, PF_ParamDef *params[], PF_LayerDef *output) {
 	PF_Err error = PF_Err_NONE;
 
@@ -68,8 +64,7 @@ static PF_Err Render (PF_InData *in_data, PF_OutData *out_data, PF_ParamDef *par
 }
 
 
-//* Smart Pre Render *//
-
+//* Smart Pre-Render *//
 static PF_Err SmartPreRender (PF_InData *in_data, PF_OutData *out_data, PF_PreRenderExtra *extra) {
 	PF_Err error = PF_Err_NONE;
 
@@ -101,7 +96,6 @@ static PF_Err SmartPreRender (PF_InData *in_data, PF_OutData *out_data, PF_PreRe
 
 
 //* Smart Render *//
-
 static PF_Err SmartRender (PF_InData *in_data, PF_OutData *out_data, PF_SmartRenderExtra *extra) {
 	PF_Err error, error2 = PF_Err_NONE;
 
@@ -134,7 +128,6 @@ static PF_Err SmartRender (PF_InData *in_data, PF_OutData *out_data, PF_SmartRen
 
 
 //* Resources *//
-
 extern "C" {
 	DllExport PF_Err PluginDataEntryFunction2 (PF_PluginDataPtr inPtr, PF_PluginDataCB2 inPluginDataCallBackPtr, SPBasicSuite *inSPBasicSuitePtr, const char *inHostName, const char *inHostVersion) {
 		PF_Err result = PF_Err_INVALID_CALLBACK;
@@ -155,36 +148,35 @@ extern "C" {
 }
 
 
-//* Extern *//
-
+//* Entry-Point *//
 PF_Err EffectMain (PF_Cmd cmd, PF_InData *in_data, PF_OutData *out_data, PF_ParamDef *params[], PF_LayerDef *output, void *extra) {
 	PF_Err error = PF_Err_NONE;
 
 	try {
-	switch (cmd) {
-		case PF_Cmd_ABOUT:
-			error = About (in_data, out_data, params, output);
-			break;
+		switch (cmd) {
+			case PF_Cmd_ABOUT:
+				error = About (in_data, out_data, params, output);
+				break;
 
-		case PF_Cmd_GLOBAL_SETUP:
-			error = GlobalSetup (in_data, out_data, params, output);
-			break;
+			case PF_Cmd_GLOBAL_SETUP:
+				error = GlobalSetup (in_data, out_data, params, output);
+				break;
 
-		case PF_Cmd_PARAMS_SETUP:
-			error = ParamsSetup (in_data, out_data, params, output);
-			break;
+			case PF_Cmd_PARAMS_SETUP:
+				error = ParamsSetup (in_data, out_data, params, output);
+				break;
 
-		case PF_Cmd_RENDER:
-			error = Render (in_data, out_data, params, output);
-			break;
+			case PF_Cmd_RENDER:
+				error = Render (in_data, out_data, params, output);
+				break;
 
-			case PF_Cmd_SMART_PRE_RENDER:
-			error = SmartPreRender (in_data, out_data, (PF_PreRenderExtra *)extra);
-			break;
+				case PF_Cmd_SMART_PRE_RENDER:
+				error = SmartPreRender (in_data, out_data, (PF_PreRenderExtra *)extra);
+				break;
 
-		case PF_Cmd_SMART_RENDER:
-			error = SmartRender (in_data, out_data, (PF_SmartRenderExtra *)extra);
-			break;
+			case PF_Cmd_SMART_RENDER:
+				error = SmartRender (in_data, out_data, (PF_SmartRenderExtra *)extra);
+				break;
 		}
 	} catch (PF_Err &thrown_error) {
 		error = thrown_error;

@@ -1,5 +1,4 @@
-include/aesdk/*
-build/*
+build
 
 #macOS
 .DS_Store
